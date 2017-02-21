@@ -8,6 +8,7 @@
 #include "easypr/core/plate_locate.h"
 #include "easypr/util/util.h"
 
+
 #ifdef OS_WINDOWS
 #include <io.h>
 #endif

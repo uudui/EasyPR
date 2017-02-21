@@ -4,6 +4,7 @@
 #include "accuracy.hpp"
 #include "chars.hpp"
 #include "plate.hpp"
+#include "easypr/preprocess/mc_data.h"
 
 // %OPENCV%\x86\vc12\lib opencv_world300d.lib;
 
@@ -88,7 +89,11 @@ int testMain() {
         case 7:
           assert(test_plate_recognize() == 0);
           break;
-        case 8:
+		case 8:
+		  easypr::preprocess::tag_data("F:/EasyPR_Data/MyData", "F:/EasyPR_Data/MyData/plates/has", "F:/EasyPR_Data/MyData/plates/no", "D:/workspaceVS/EasyPR/resources/model/svm.xml");
+		  //assert(test_tag_data() == 0);
+		  break;
+        case 9:
           assert(test_plate_locate() == 0);
           assert(test_plate_judge() == 0);
           assert(test_plate_detect() == 0);
@@ -99,7 +104,7 @@ int testMain() {
 
           assert(test_plate_recognize() == 0);
           break;
-        case 9:
+        case 10:
           isExit = true;
           break;
         default:
@@ -402,8 +407,13 @@ int main(int argc, const char* argv[]) {
           break;
         }
         case 8:
-          isExit = true;
+		  std::cout << "自定义测试开始" << ":";
+
+		  std::cout << "\n自定义测试结束" << ":";
           break;
+		case 9:
+			isExit = true;
+			break;
         default:
           std::cout << kv->get("input_error") << ":";
           isRepeat = true;

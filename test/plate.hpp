@@ -76,6 +76,25 @@ int test_plate_judge() {
   return resultJu;
 }
 
+int test_tag_data() {
+	cout << "test_tag_data" << endl;
+	cv::Mat src = imread("F:/EasyPR_Data/MyData/4.jpg");
+
+	vector<CPlate> resultVec;
+	CPlateDetect pd;
+	pd.setPDLifemode(true);
+
+	int result = pd.plateDetect(src, resultVec);
+
+	if (result == 0) {
+		size_t num = resultVec.size();
+		std::cout << "定位到可能为车牌的区域数" << num;
+
+	}
+
+	return result;
+}
+
 int test_plate_detect() {
   cout << "test_plate_detect" << endl;
 
@@ -86,6 +105,7 @@ int test_plate_detect() {
   pd.setPDLifemode(true);
 
   int result = pd.plateDetect(src, resultVec);
+  
   if (result == 0) {
     size_t num = resultVec.size();
     for (size_t j = 0; j < num; j++) {

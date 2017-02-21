@@ -7,6 +7,7 @@ EasyPR Test:
 5. test chars_identify(字符鉴别);
 6. test chars_recognise(字符识别);
 7. test plate_recognize(车牌识别);
-8. test all(测试全部);
-9. 返回;
+8. test tag_data(车牌分类)
+9. test all(测试全部);
+10. 返回;
 ////////////////////////////////////
